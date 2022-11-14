@@ -1,6 +1,247 @@
+//Main styles
 body {
   font-family: Helvetica, sans-serif;
 }
 .btn {
-  padding-bottom: 19px;
+  padding-bottom: rem(19px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.38;
+  letter-spacing: 0.2em;
+  box-shadow: none;
+  color: #fff;
+  &:hover {
+    color: #fff;
+    background-color: $btn-hover-bg-color;
+    box-shadow: 0px 2px 5px #00000040;
+  }
+  &.btn-light {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: transparent;
+    letter-spacing: rem(3px);
+    font-size: rem(12px);
+    padding-top: rem(17px);
+    padding-bottom: rem(14px);
+    padding-right: rem(38px);
+    padding-left: rem(43px);
+    &:hover {
+      background-color: #000;
+      border-color: #000;
+    }
+    span {
+      flex: 1;
+    }
+    svg,
+    path {
+      height: rem(13px);
+      width: auto;
+      margin-left: rem(13px);
+      transition: $transition-base;
+    }
+  }
 }
+
+//Navbar
+.navbar {
+  z-index: 999;
+  left: 0;
+  right: 0;
+  padding: 0;
+  height: rem(108px);
+  .container {
+    height: 100%;
+    &:after {
+      content: '';
+      display: block;
+      height: 1px;
+      background-color: #fff;
+      opacity: 0.4;
+      position: absolute;
+      left: 5px;
+      right: 5px;
+      bottom: 0;
+      z-index: 2;
+    }
+  }
+}
+
+.navbar-collapse {
+  &__inner {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+.nav-social {
+  gap: rem(13px);
+  height: rem(18px);
+  margin-bottom: 0;
+  svg {
+    height: rem(16px);
+    width: auto;
+    transition: $transition-base;
+  }
+  a {
+    display: flex;
+    &:hover {
+      svg {
+        scale: 1.1;
+      }
+    }
+  }
+}
+
+.navbar-nav {
+  gap: rem(20px);
+  padding-top: rem(2px);
+  &--1 {
+    margin-left: rem(68px);
+  }
+  .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: uppercase;
+    font-family: Roboto, sans-serif;
+    font-weight: normal;
+    font-size: 13px;
+    letter-spacing: 0.23em;
+    text-align: center;
+    color: #fff;
+    opacity: 1;
+    line-height: 1.38;
+    position: relative;
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 8px;
+      right: 100%;
+      height: 2px;
+      background-color: #fff;
+      transition: $transition-base;
+    }
+    &:hover {
+      &:after {
+        right: 8px;
+      }
+    }
+  }
+}
+
+.navbar-brand {
+  margin-right: rem(153px);
+  margin-left: rem(153px);
+  svg {
+    height: rem(32px);
+    width: auto;
+  }
+}
+
+//Hero slider
+.section-hero-slider {
+  height: 100vh;
+  .splide {
+    height: 100%;
+    &__track {
+      height: 100%;
+    }
+    &__pagination {
+      gap: 10px;
+      bottom: rem(30px);
+      li {
+        line-height: 0;
+      }
+      button {
+        width: rem(50px);
+        height: 5px;
+        border-radius: 100px;
+        opacity: 1;
+        transition: $transition-base;
+        margin: 0;
+        &:hover {
+          background-color: $primary;
+        }
+        &.is-active {
+          transform: scale(1);
+          background-color: $primary;
+          &:hover {
+            background-color: $btn-hover-bg-color;
+          }
+        }
+      }
+    }
+    padding-bottom: 1px;
+  }
+  .single-slide {
+    &__img-wrap {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    h3 {
+      font-family: Roboto, sans-serif;
+      font-size: rem(13px);
+      letter-spacing: rem(3px);
+      text-align: center;
+      color: #fff;
+      text-shadow: 0px 0px 4px #000;
+      text-transform: uppercase;
+      line-height: 1.38;
+      margin-bottom: rem(12px);
+    }
+    h1 {
+      letter-spacing: rem(-1px);
+      color: #ffffff;
+      text-shadow: 0px 0px 25px #00000080;
+      opacity: 1;
+      line-height: 1.11;
+      font-weight: bold;
+      max-width: 686px;
+      font-size: rem(52px);
+      margin-bottom: rem(24px);
+    }
+  }
+}
+
+//Section content image
+.content-img {
+  &__col {
+    width: 50%;
+    &--img {
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    &--text {
+      padding: rem(170px) rem(70px);
+    }
+  }
+  &__text-inner {
+    max-width: rem(615px);
+  }
+  .subheader {
+    margin-bottom: rem(9px);
+  }
+  h2 {
+    font-size: rem(42px);
+    line-height: 1.23;
+    margin-bottom: rem(26px);
+    font-size: rem(42px);
+    font-weight: bold;
+  }
+  p {
+    margin-bottom: rem(27px);
+    font-size: rem(15px);
+    line-height: 1.86;
+  }
+}
+
+//Section testimonials slider

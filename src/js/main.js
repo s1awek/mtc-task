@@ -6,9 +6,6 @@ import { Util, Dropdown, Offcanvas, Popover } from 'bootstrap';
 //Import Splide slider
 import Splide from '@splidejs/splide';
 
-// Create an example popover
-document.querySelectorAll('[data-bs-toggle="popover"]').forEach((popover) => {
-  new Popover(popover);
-});
-
-new Splide('.splide').mount();
+new Splide('.section-hero-slider .splide', {
+  arrows: false,
+}).mount();

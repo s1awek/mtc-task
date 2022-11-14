@@ -1,0 +1,15 @@
+//Helpers
+.absolute {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.subheader {
+  font-size: rem(13px);
+  text-transform: uppercase;
+  letter-spacing: rem(2.5px);
+  color: $primary;
+  line-height: 1.38;
+}

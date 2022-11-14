@@ -1,0 +1,6 @@
+//Functions & mixins
+
+// Function for converting a px based values to rem.
+@function rem($size) {
+  @return calc($size / 16px) * 1rem;
+}

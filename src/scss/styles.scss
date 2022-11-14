@@ -26,14 +26,13 @@
 // Toggle global options
 $enable-gradients: true;
 $enable-shadows: true;
+$grid-gutter-width: 1.25rem;
+$primary: #d4b254;
+$btn-padding-x: 60px;
+$btn-border-radius: 100px;
+$btn-padding-y: 21px;
+$input-btn-font-family: Roboto, sans-serif;
 
-$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-
-// Customize some defaults
-$body-color: #333;
-$body-bg: #fff;
-$border-radius: 0.4rem;
-$success: #7952b3;
 @import '~@splidejs/splide/css';
 // Required
 @import '~bootstrap/scss/functions';
@@ -83,5 +82,5 @@ $success: #7952b3;
 //
 // Custom styles
 //
-
+@import 'fonts';
 @import 'custom-styles';

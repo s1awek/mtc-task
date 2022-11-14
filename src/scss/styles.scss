@@ -45,6 +45,7 @@ $container-max-widths: (
   xxl: 1310px,
 );
 @import '~@splidejs/splide/css';
+@import '~simplelightbox/dist/simple-lightbox.min.css';
 // Required
 @import '~bootstrap/scss/functions';
 @import '~bootstrap/scss/variables';

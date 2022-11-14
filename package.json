@@ -12,8 +12,9 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@splidejs/splide": "^4.1.4",
     "bootstrap": "^5.2.0",
-    "@splidejs/splide": "^4.1.4"
+    "simplelightbox": "^2.10.4"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.8",

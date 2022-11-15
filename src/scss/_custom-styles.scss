@@ -567,6 +567,10 @@ body {
       font-size: rem(13px);
       margin-bottom: rem(6px);
       opacity: 0.5;
+      text-align: center;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
     }
   }
   .nav-social {
@@ -583,6 +587,9 @@ body {
       svg {
         width: rem(18px);
         height: auto;
+      }
+      path {
+        fill: #000;
       }
     }
     &__fb {

@@ -31,13 +31,16 @@ const throttle = (func, limit) => {
 };
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  new Splide('.section-hero-slider .splide', {
-    arrows: false,
-  }).mount();
-
-  new Splide('.testimonials-slider .splide', {
-    pagination: false,
-  }).mount();
+  if (document.querySelectorAll('.section-hero-slider .splide').length) {
+    new Splide('.section-hero-slider .splide', {
+      arrows: false,
+    }).mount();
+  }
+  if (document.querySelectorAll('.testimonials-slider .splide').length) {
+    new Splide('.testimonials-slider .splide', {
+      pagination: false,
+    }).mount();
+  }
 
   new SimpleLightbox('.r-gallery a', {});
 
@@ -63,12 +66,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, 300)
   );
   const navMenu = document.getElementById('navbarSupportedContent');
-  navMenu.addEventListener('hidden.bs.collapse', function () {
-    const body = document.body;
-    body.classList.remove('mm-open');
-  });
-  navMenu.addEventListener('show.bs.collapse', function () {
-    const body = document.body;
-    body.classList.add('mm-open');
-  });
+  if (navMenu) {
+    navMenu.addEventListener('hidden.bs.collapse', function () {
+      const body = document.body;
+      body.classList.remove('mm-open');
+    });
+    navMenu.addEventListener('show.bs.collapse', function () {
+      const body = document.body;
+      body.classList.add('mm-open');
+    });
+  }
+
 });

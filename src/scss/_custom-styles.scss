@@ -13,10 +13,17 @@ body {
   letter-spacing: 0.2em;
   box-shadow: none;
   color: #fff;
+  @include media-breakpoint-down(lg) {
+    font-size: rem(14px);
+  }
   &:hover {
     color: #fff;
     background-color: $btn-hover-bg-color;
     box-shadow: 0px 2px 5px #00000040;
+  }
+  &.btn-small {
+    padding-left: rem(37px);
+    padding-right: rem(37px);
   }
   &.btn-light {
     color: #fff;
@@ -116,8 +123,9 @@ body {
     box-shadow: none;
   }
 }
-.mm-open {
-  .navbar-toggler-icon {
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  .mm-open & {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%0A%3E%3Cline x1='18' y1='6' x2='6' y2='18' /%3E%3Cline x1='6' y1='6' x2='18' y2='18' /%3E%3C/svg%3E");
     transition: $transition-base;
   }
@@ -180,7 +188,7 @@ body {
     text-transform: uppercase;
     font-family: Roboto, sans-serif;
     font-weight: normal;
-    font-size: 13px;
+    font-size: rem(13px);
     letter-spacing: 0.23em;
     text-align: center;
     color: #fff;
@@ -191,7 +199,7 @@ body {
       content: '';
       display: block;
       position: absolute;
-      left: 8px;
+      left: rem(8px);
       right: 100%;
       height: 2px;
       background-color: #fff;
@@ -233,7 +241,7 @@ body {
       height: 100%;
     }
     &__pagination {
-      gap: 10px;
+      gap: rem(10px);
       bottom: rem(30px);
       li {
         line-height: 0;
@@ -260,6 +268,7 @@ body {
     padding-bottom: 1px;
   }
   .single-slide {
+    padding: 0 24px;
     &__img-wrap {
       img {
         width: 100%;
@@ -286,18 +295,33 @@ body {
       opacity: 1;
       line-height: 1.11;
       font-weight: bold;
-      max-width: 686px;
+      max-width: rem(686px);
       font-size: rem(52px);
       margin-bottom: rem(24px);
+      @include media-breakpoint-down(lg) {
+        font-size: rem(42px);
+      }
+      @include media-breakpoint-down(sm) {
+        font-size: rem(34px);
+      }
     }
   }
 }
 
 //Section content image
 .content-img {
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+  }
   &__col {
     width: 50%;
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+    }
     &--img {
+      @include media-breakpoint-down(lg) {
+        height: 300px;
+      }
       img {
         object-fit: cover;
         width: 100%;
@@ -306,6 +330,9 @@ body {
     }
     &--text {
       padding: rem(170px) rem(70px);
+      @include media-breakpoint-down(lg) {
+        padding: rem(64px) rem(32px);
+      }
     }
   }
   &__text-inner {
@@ -320,6 +347,9 @@ body {
     margin-bottom: rem(26px);
     font-size: rem(42px);
     font-weight: bold;
+    @include media-breakpoint-down(lg) {
+      font-size: rem(34px);
+    }
   }
   p {
     margin-bottom: rem(27px);
@@ -333,6 +363,10 @@ body {
   background-color: #eeeeee;
   padding-top: rem(117px);
   padding-bottom: rem(105px);
+  @include media-breakpoint-down(lg) {
+    padding-top: rem(64px);
+    padding-bottom: rem(48px);
+  }
   .splide {
     margin-left: auto;
     margin-right: auto;
@@ -341,11 +375,21 @@ body {
       width: rem(70px);
       height: rem(70px);
       opacity: 1;
+      @include media-breakpoint-down(lg) {
+        width: rem(40px);
+        height: rem(40px);
+      }
       &--prev {
         left: 0;
+        @include media-breakpoint-down(lg) {
+          left: rem(10px);
+        }
       }
       &--next {
         right: 0;
+        @include media-breakpoint-down(lg) {
+          right: rem(10px);
+        }
       }
       background-color: transparent;
       svg {
@@ -357,10 +401,12 @@ body {
 
   .single-slide {
     &__inner {
-      max-width: rem(600px);
+      max-width: rem(620px);
       margin-left: auto;
       margin-right: auto;
       padding-bottom: rem(12px);
+      padding-left: rem(10px);
+      padding-right: rem(10px);
     }
     h3 {
       margin-bottom: rem(10px);
@@ -370,11 +416,19 @@ body {
       font-weight: bold;
       line-height: 1.31;
       margin-bottom: rem(20px);
+      @include media-breakpoint-down(lg) {
+        font-size: rem(28px);
+      }
     }
     p {
       margin-bottom: rem(20px);
       line-height: 1.77;
       font-size: rem(18px);
+      @include media-breakpoint-down(lg) {
+        font-size: rem(16px);
+        padding-left: rem(30px);
+        padding-right: rem(30px);
+      }
     }
     &__name {
       margin-bottom: rem(32px);
@@ -389,14 +443,21 @@ body {
   padding-top: rem(93px);
   padding-bottom: rem(100px);
   overflow: hidden;
+  @include media-breakpoint-down(md) {
+    padding-top: rem(52px);
+    padding-bottom: rem(64px);
+  }
   .r-gallery {
     margin-bottom: rem(40px);
   }
   h2 {
-    margin-bottom: rem(38px);
+    margin-bottom: rem(32px);
     font-weight: bold;
     font-size: rem(32px);
     line-height: 1.31;
+    @include media-breakpoint-down(md) {
+      font-size: rem(30px);
+    }
   }
   a {
     &:hover {
@@ -411,6 +472,14 @@ body {
     height: 100%;
     object-fit: cover;
   }
+  .c-gallery {
+    @include media-breakpoint-down(md) {
+      height: rem(300px);
+      max-width: rem(370px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 }
 
 //Footer
@@ -418,6 +487,10 @@ body {
   background-color: #000;
   padding-top: rem(45px);
   padding-bottom: rem(60px);
+  @include media-breakpoint-down(md) {
+    padding-top: rem(24px);
+    padding-bottom: rem(32px);
+  }
   &__bg {
     img {
       object-fit: cover;
@@ -463,15 +536,32 @@ body {
   }
   .r-footer {
     margin-bottom: rem(48px);
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem(12px);
+    }
+    @include media-breakpoint-down(sm) {
+      margin-bottom: rem(48px);
+    }
     h3 {
       font-weight: bold;
       margin-bottom: rem(26px);
       color: #fff;
       font-size: rem(24px);
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem(12px);
+      }
+    }
+  }
+  .c-footer {
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(32px);
     }
   }
   .r-copyright {
     margin-bottom: rem(59px);
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem(24px);
+    }
     p {
       color: #fff;
       font-size: rem(13px);
@@ -498,14 +588,14 @@ body {
     &__fb {
       a {
         svg {
-          width: 12px;
+          width: rem(12px);
         }
       }
     }
     &__tt {
       a {
         svg {
-          width: 23px;
+          width: rem(23px);
         }
       }
     }
@@ -521,6 +611,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: rem(6px);
+  @include media-breakpoint-down(lg) {
+    gap: 0;
+  }
   a {
     letter-spacing: 2.5px;
     color: #ffffff;
@@ -529,6 +622,9 @@ body {
     font-size: rem(13px);
     text-decoration: none;
     transition: $transition-base;
+    display: flex;
+    padding-top: rem(3px);
+    padding-bottom: rem(3px);
     &:hover {
       opacity: 1;
     }

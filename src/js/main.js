@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const header = document.getElementById('navbar');
     const body = document.body;
     if (header) {
-      console.log(window.scrollY);
       if (window.scrollY > 0) {
         header.classList.add('scrolled');
         body.classList.add('scrolled');
